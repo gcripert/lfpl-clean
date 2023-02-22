@@ -55,7 +55,7 @@ def build_genre_column(df: pd.DataFrame) -> pd.DataFrame:
             (df['ItemCollection'].isin(genre_data['Unknown']))
         ]
         genre_values = ['Fiction', 'Non-Fiction', 'Unknown']
-        df['Audience'] = np.select(genre_conditions, genre_values)
+        df['Genre'] = np.select(genre_conditions, genre_values)
         return df
 
 
@@ -76,7 +76,7 @@ def build_audience_column(df: pd.DataFrame) -> pd.DataFrame:
             (df['ItemCollection'].isin(audience_data['Unknown']))
         ]
         audience_values = ['Adult', 'Teen', 'Children', 'Unknown']
-        df['Genre'] = np.select(audience_conditions, audience_values)
+        df['Audience'] = np.select(audience_conditions, audience_values)
         return df
 
 
